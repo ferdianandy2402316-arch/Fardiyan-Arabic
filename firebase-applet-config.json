@@ -1,12 +1,10 @@
 {
-  "projectId": "gen-lang-client-0505806332",
-  "appId": "1:240612623217:web:db4da810d767026bc02cd0",
-  "apiKey": "AIzaSyDb9a4T590fRKSJ_twtY1eIHqo2ft2X9AQ",
-  "authDomain": "gen-lang-client-0505806332.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-arabinature-1d1e4b3a-b49c-4471-bf8b-a97da1b81a51",
-  "storageBucket": "gen-lang-client-0505806332.firebasestorage.app",
-  "messagingSenderId": "240612623217",
+  "projectId": "fardiyan-arabic-academy",
+  "appId": "1:337268309439:web:687ffde96731a1d3c4b50a",
+  "apiKey": "AIzaSyDC_sGXvmg_XEPqgV9WziiZqyCvXlM9ld8",
+  "authDomain": "fardiyan-arabic-academy.firebaseapp.com",
+  "storageBucket": "fardiyan-arabic-academy.firebasestorage.app",
+  "messagingSenderId": "337268309439",
   "measurementId": "",
-  "oAuthClientId": "240612623217-rftn42i04gdi6ouecc7s7l9b5o5202np.apps.googleusercontent.com",
-  "recaptchaSiteKey": ""
+  "firestoreDatabaseId": "(default)"
 }
