@@ -1,0 +1,97 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document for students and admins",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 150 },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "role": { "type": "string", "enum": ["student", "admin"] },
+        "points": { "type": "number" },
+        "completedLessons": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "email", "displayName", "role"]
+    },
+    "UserProgress": {
+      "title": "UserProgress",
+      "description": "Progress tracking for each lesson module",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "moduleId": { "type": "string", "maxLength": 64 },
+        "completed": { "type": "boolean" },
+        "score": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "moduleId", "completed"]
+    },
+    "QuizResult": {
+      "title": "QuizResult",
+      "description": "Recorded quiz scores and achievements",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "quizTitle": { "type": "string", "maxLength": 150 },
+        "score": { "type": "number" },
+        "totalQuestions": { "type": "number" },
+        "correctAnswers": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "quizTitle", "score", "totalQuestions", "correctAnswers"]
+    },
+    "Material": {
+      "title": "Material",
+      "description": "Learning materials for Arabic nature theme",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "enum": ["mufrodat", "hiwar", "qawaid", "qiraah"] },
+        "description": { "type": "string", "maxLength": 500 },
+        "arabicContent": { "type": "string", "maxLength": 5000 },
+        "translation": { "type": "string", "maxLength": 5000 },
+        "createdBy": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "category", "arabicContent"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Admin UID indicator collection",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 150 },
+        "role": { "type": "string", "enum": ["admin"] }
+      },
+      "required": ["userId", "role"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile collection"
+    },
+    "/users/{userId}/progress/{progressId}": {
+      "schema": "UserProgress",
+      "description": "User learning progress"
+    },
+    "/users/{userId}/quizResults/{quizResultId}": {
+      "schema": "QuizResult",
+      "description": "Quiz results history"
+    },
+    "/materials/{materialId}": {
+      "schema": "Material",
+      "description": "Learning content modules"
+    },
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Admin collection for role validation"
+    }
+  }
+}

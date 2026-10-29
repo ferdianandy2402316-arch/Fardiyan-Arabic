@@ -1,0 +1,6 @@
+{
+  "name": "Arabiyah Al-Bi'ah: Bahasa Arab MTs Kelas 7",
+  "description": "Aplikasi Interaktif Pembelajaran Bahasa Arab Kelas 7 MTsN Tema Keindahan Alam (جمال الطبيعة) dengan Mufrodat, Hiwar, Qawa'id, Kuis Interaktif, dan Asisten AI Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
